@@ -30,7 +30,8 @@ public class AppStartupRunner implements ApplicationRunner {
                                 .number("1")
                                 .zip("10785")
                                 .build())
-                        .userName("1000")
+                        .name("1000")
+                        .email("test@test.com")
                         .build(),
                 User.builder()
                         .address(Address.builder()
@@ -39,7 +40,8 @@ public class AppStartupRunner implements ApplicationRunner {
                                 .number("1")
                                 .zip("10785")
                                 .build())
-                        .userName("1001")
+                        .name("1001")
+                        .email("test2@test.com")
                         .build(),
                 User.builder()
                         .address(Address.builder()
@@ -48,8 +50,8 @@ public class AppStartupRunner implements ApplicationRunner {
                                 .number("2")
                                 .zip("10119")
                                 .build())
-                        .userName("1002")
-
+                        .name("1002")
+                        .email("test3@test.com")
                         .build(),
                 User.builder()
                         .address(Address.builder()
@@ -58,7 +60,8 @@ public class AppStartupRunner implements ApplicationRunner {
                                 .number("3")
                                 .zip("10119")
                                 .build())
-                        .userName("1003")
+                        .name("1003")
+                        .email("test4@test.com")
                         .build(),
                 User.builder()
                         .address(Address.builder()
@@ -67,7 +70,8 @@ public class AppStartupRunner implements ApplicationRunner {
                                 .number("1")
                                 .zip("10785")
                                 .build())
-                        .userName("1000")
+                        .name("1000")
+                        .email("test5@test.com")
                         .build()));
     }
 }

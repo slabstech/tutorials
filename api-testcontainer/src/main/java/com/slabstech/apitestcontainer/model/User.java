@@ -21,8 +21,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    private String userName;
     @Column(unique = true, nullable = false)
     private String email;
 
@@ -38,7 +36,7 @@ public class User {
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
-    public User(String usr01, LocalDate of, String s, int i) {
+    public User(String name, LocalDate creationDate, String email, int status) {
         this.name = name;
         this.creationDate = creationDate;
         this.email = email;

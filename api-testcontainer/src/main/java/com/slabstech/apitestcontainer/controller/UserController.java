@@ -46,45 +46,45 @@ public class UserController {
     /**
      * Gets Users by id.
      *
-     * @param parcelId the User id
+     * @param userId the User id
      * @return the User by id
      * @throws Exception
      */
     @GetMapping("/{id}")    // GET Method for Read operation
-    public ResponseEntity<User> getHomeById(@PathVariable(value = "id") Long parcelId)
+    public ResponseEntity<User> getUserById(@PathVariable(value = "id") Long userId)
             throws Exception {
 
-        User parcel = userRepository.findById(parcelId)
-                .orElseThrow(() -> new Exception("User " + parcelId + " not found"));
-        return ResponseEntity.ok().body(parcel);
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new Exception("User " + userId + " not found"));
+        return ResponseEntity.ok().body(user);
     }
 
 
-    @GetMapping("/{userName}")
-    public List<User> getAllUsersWithUserName(@PathVariable(value = "userName") @RequestParam(required = true) String userName) {
+    @GetMapping("/{name}")
+    public List<User> getAllUsersWithName(@PathVariable(value = "name") @RequestParam(required = true) String name) {
 
-        return userRepository.findAllByUserName(userName);
+        return (List<User>) userRepository.findAllByName(name);
     }
 
     /**
      * Delete User.
      *
-     * @param parcelId the parcel id
+     * @param userId the user id
      * @return the map of the deleted User
      * @throws Exception the exception
      */
     @DeleteMapping("/{id}")    // DELETE Method for Delete operation
-    public Map<String, Boolean> deleteHome(@PathVariable(value = "id") Long parcelId) throws Exception {
-        User parcel = userRepository.findById(parcelId)
-                .orElseThrow(() -> new Exception("User " + parcelId + " not found"));
+    public Map<String, Boolean> deleteUser(@PathVariable(value = "id") Long userId) throws Exception {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new Exception("User " + userId + " not found"));
 
-        userRepository.delete(parcel);
+        userRepository.delete(user);
         Map<String, Boolean> response = new HashMap<>();
         response.put("deleted", Boolean.TRUE);
         return response;
     }
 
-    @PostMapping(value = "/parcels", consumes = "application/json")
+    @PostMapping(value = "/users", consumes = "application/json")
     public ResponseEntity<User> insertNewUsers(@RequestBody User user) {
 
         Set<ConstraintViolation<User>> violations = validator.validate(user);
@@ -105,23 +105,23 @@ public class UserController {
     /**
      * Update User response entity.
      *
-     * @param parcelId the User id
-     * @param parcelDetails the User details
+     * @param userId the User id
+     * @param userDetails the User details
      * @return the response entity
      * @throws Exception
      */
     @PutMapping("/{id}")    // PUT Method for Update operation
     public ResponseEntity<User> updateUser(
-            @PathVariable(value = "id") Long parcelId, @Valid @RequestBody User parcelDetails)
+            @PathVariable(value = "id") Long userId, @Valid @RequestBody User userDetails)
             throws Exception {
 
-        User parcel = userRepository.findById(parcelId)
-                .orElseThrow(() -> new Exception("User " + parcelId + " not found"));
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new Exception("User " + userId + " not found"));
 
 
         // Set the values for User here to update
 
-        Set<ConstraintViolation<User>> violations = validator.validate(parcel);
+        Set<ConstraintViolation<User>> violations = validator.validate(user);
 
         if (!violations.isEmpty()) {
             StringBuilder sb = new StringBuilder();
@@ -133,7 +133,7 @@ public class UserController {
         }
 
 
-        final User updatedUser = userRepository.save(parcel);
+        final User updatedUser = userRepository.save(user);
         return ResponseEntity.ok(updatedUser);
     }
 

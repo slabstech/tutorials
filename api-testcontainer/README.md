@@ -13,7 +13,7 @@
 * Running the project 
   * CommandLine 
     * .\gradlew build 
-    * java -jar .\build\libs\parcelshop-0.0.1-SNAPSHOT.jar 
+    * java -jar .\build\libs\api-testcontainer-0.0.1-SNAPSHOT.jar 
   * Docker 
     * docker run -p 8080:8080 slabstech/parcelshop
 

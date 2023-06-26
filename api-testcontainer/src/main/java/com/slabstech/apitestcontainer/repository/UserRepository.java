@@ -18,7 +18,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>, UserRepositoryCustom {
     List<User> findAll();
-    List<User> findAllByUserName(String userName);
 
     Stream<User> findAllByName(String userNameAdam);
     @Query("SELECT u FROM User u WHERE u.status = 1")
