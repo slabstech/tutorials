@@ -1,18 +1,13 @@
 package com.slabstech.apitestcontainer.model;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
 
 @Data
 @Builder
@@ -28,9 +23,19 @@ public class User {
 
     @NotNull
     private String userNumber;
+    @Column(unique = true, nullable = false)
+    private String email;
+
+    private String name;
+    private LocalDate creationDate;
+    private LocalDate lastLoginDate;
+
+    private boolean active;
 
     private String deliveryDate;
     private DeliveryState deliveryState;
+
+    private Integer status;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
