@@ -22,7 +22,7 @@ public class User {
     private Long id;
 
     @NotNull
-    private String userNumber;
+    private String userName;
     @Column(unique = true, nullable = false)
     private String email;
 
@@ -32,13 +32,18 @@ public class User {
 
     private boolean active;
 
-    private String deliveryDate;
-    private DeliveryState deliveryState;
-
     private Integer status;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
+
+    public User(String usr01, LocalDate of, String s, int i) {
+        this.name = name;
+        this.creationDate = creationDate;
+        this.email = email;
+        this.status = status;
+        this.active = true;
+    }
 }
 

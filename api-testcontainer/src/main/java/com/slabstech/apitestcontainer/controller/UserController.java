@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.slabstech.apitestcontainer.model.DeliveryState;
 import com.slabstech.apitestcontainer.model.User;
 import com.slabstech.apitestcontainer.repository.UserRepository;
 import com.slabstech.apitestcontainer.service.NotificationService;
@@ -40,7 +39,7 @@ public class UserController {
         if(deliveryDate == null )
             return userRepository.findAll();
 
-        return userRepository.findAllByDeliveryDateAndDeliveryState(deliveryDate, DeliveryState.OUT_FOR_DELIVERY);
+        return userRepository.findAll();
     }
 
 
@@ -60,21 +59,11 @@ public class UserController {
         return ResponseEntity.ok().body(parcel);
     }
 
-    @GetMapping("/{deliveryState}")
-    public List<User> getAllUsersWithDeliveryState(@PathVariable(value = "deliveryState") @RequestParam(required = true) DeliveryState deliveryState) {
-        return userRepository.findAllByDeliveryState(deliveryState);
-    }
 
-    @GetMapping("/{deliveryDate}")
-    public List<User> getAllUsersWithDate( @PathVariable(value = "deliveryDate")@RequestParam(required = true) String deliveryDate) {
+    @GetMapping("/{userName}")
+    public List<User> getAllUsersWithUserName(@PathVariable(value = "userName") @RequestParam(required = true) String userName) {
 
-        return userRepository.findAllByDeliveryDate(deliveryDate);
-    }
-
-    @GetMapping("/{parcelNumber}")
-    public List<User> getAllUsersWithNumber(@PathVariable(value = "parcelNumber") @RequestParam(required = true) String parcelNumber) {
-
-        return userRepository.findAllByUserNumber(parcelNumber);
+        return userRepository.findAllByUserName(userName);
     }
 
     /**

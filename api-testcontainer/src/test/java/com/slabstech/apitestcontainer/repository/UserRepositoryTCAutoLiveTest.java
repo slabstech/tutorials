@@ -2,6 +2,8 @@ package com.slabstech.apitestcontainer.repository;
 
 
 import com.slabstech.apitestcontainer.ApiTestcontainerApplication;
+import com.slabstech.apitestcontainer.model.User;
+import com.slabstech.apitestcontainer.util.SLabsPostgresqlContainer;
 import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,7 +26,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class UserRepositoryTCAutoLiveTest extends UserRepositoryCommon {
 
     @ClassRule
-    public static PostgreSQLContainer<BaeldungPostgresqlContainer> postgreSQLContainer = BaeldungPostgresqlContainer.getInstance();
+    public static PostgreSQLContainer<SLabsPostgresqlContainer> postgreSQLContainer = SLabsPostgresqlContainer.getInstance();
 
     @Test
     @Transactional

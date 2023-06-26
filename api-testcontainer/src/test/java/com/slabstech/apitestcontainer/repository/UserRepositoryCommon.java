@@ -411,8 +411,8 @@ public class UserRepositoryCommon {
     @Test
     @Transactional
     public void givenTwoUsers_whenFindByNameUsr01_ThenUserUsr01() {
-        User usr01 = new User("usr01", LocalDate.now(), "usr01@baeldung.com", 1);
-        User usr02 = new User("usr02", LocalDate.now(), "usr02@baeldung.com", 1);
+        User usr01 = new User("usr01", LocalDate.now(), "usr01@slabstechs.com", 1);
+        User usr02 = new User("usr02", LocalDate.now(), "usr02@slabstechs.com", 1);
 
         userRepository.save(usr01);
         userRepository.save(usr02);
@@ -425,8 +425,8 @@ public class UserRepositoryCommon {
     @Test
     @Transactional
     public void givenTwoUsers_whenFindByNameUsr00_ThenNoUsers() {
-        User usr01 = new User("usr01", LocalDate.now(), "usr01@baeldung.com", 1);
-        User usr02 = new User("usr02", LocalDate.now(), "usr02@baeldung.com", 1);
+        User usr01 = new User("usr01", LocalDate.now(), "usr01@slabstechs.com", 1);
+        User usr02 = new User("usr02", LocalDate.now(), "usr02@slabstechs.com", 1);
 
         userRepository.save(usr01);
         userRepository.save(usr02);
@@ -438,7 +438,7 @@ public class UserRepositoryCommon {
 
     @Test
     public void givenTwoUsers_whenFindUsersWithGmailAddress_ThenUserUsr02() {
-        User usr01 = new User("usr01", LocalDate.now(), "usr01@baeldung.com", 1);
+        User usr01 = new User("usr01", LocalDate.now(), "usr01@slabstechs.com", 1);
         User usr02 = new User("usr02", LocalDate.now(), "usr02@gmail.com", 1);
 
         userRepository.save(usr01);
@@ -452,8 +452,8 @@ public class UserRepositoryCommon {
     @Test
     @Transactional
     public void givenTwoUsers_whenDeleteAllByCreationDateAfter_ThenOneUserRemains() {
-        User usr01 = new User("usr01", LocalDate.of(2018, 1, 1), "usr01@baeldung.com", 1);
-        User usr02 = new User("usr02", LocalDate.of(2018, 6, 1), "usr02@baeldung.com", 1);
+        User usr01 = new User("usr01", LocalDate.of(2018, 1, 1), "usr01@slabstechs.com", 1);
+        User usr02 = new User("usr02", LocalDate.of(2018, 6, 1), "usr02@slabstechs.com", 1);
 
         userRepository.save(usr01);
         userRepository.save(usr02);
@@ -468,8 +468,8 @@ public class UserRepositoryCommon {
 
     @Test
     public void givenTwoUsers_whenFindAllUsersByPredicates_ThenUserUsr01() {
-        User usr01 = new User("usr01", LocalDate.of(2018, 1, 1), "usr01@baeldung.com", 1);
-        User usr02 = new User("usr02", LocalDate.of(2018, 6, 1), "usr02@baeldung.org", 1);
+        User usr01 = new User("usr01", LocalDate.of(2018, 1, 1), "usr01@slabstechs.com", 1);
+        User usr02 = new User("usr02", LocalDate.of(2018, 6, 1), "usr02@slabstechs.org", 1);
 
         userRepository.save(usr01);
         userRepository.save(usr02);
@@ -487,9 +487,9 @@ public class UserRepositoryCommon {
     @Test
     @Transactional
     public void givenTwoUsers_whenDeactivateUsersNotLoggedInSince_ThenUserUsr02Deactivated() {
-        User usr01 = new User("usr01", LocalDate.of(2018, 1, 1), "usr01@baeldung.com", 1);
+        User usr01 = new User("usr01", LocalDate.of(2018, 1, 1), "usr01@slabstechs.com", 1);
         usr01.setLastLoginDate(LocalDate.now());
-        User usr02 = new User("usr02", LocalDate.of(2018, 6, 1), "usr02@baeldung.org", 1);
+        User usr02 = new User("usr02", LocalDate.of(2018, 6, 1), "usr02@slabstechs.org", 1);
         usr02.setLastLoginDate(LocalDate.of(2018, 7, 20));
 
         userRepository.save(usr01);
@@ -505,9 +505,9 @@ public class UserRepositoryCommon {
     @Test
     @Transactional
     public void givenTwoUsers_whenDeleteDeactivatedUsers_ThenUserUsr02Deleted() {
-        User usr01 = new User("usr01", LocalDate.of(2018, 1, 1), "usr01@baeldung.com", 1);
+        User usr01 = new User("usr01", LocalDate.of(2018, 1, 1), "usr01@slabstechs.com", 1);
         usr01.setLastLoginDate(LocalDate.now());
-        User usr02 = new User("usr02", LocalDate.of(2018, 6, 1), "usr02@baeldung.com", 0);
+        User usr02 = new User("usr02", LocalDate.of(2018, 6, 1), "usr02@slabstechs.com", 0);
         usr02.setLastLoginDate(LocalDate.of(2018, 7, 20));
         usr02.setActive(false);
 
@@ -525,9 +525,9 @@ public class UserRepositoryCommon {
     @Test
     @Transactional
     public void givenTwoUsers_whenDeleteDeactivatedUsersWithNoModifyingAnnotation_ThenException() {
-        User usr01 = new User("usr01", LocalDate.of(2018, 1, 1), "usr01@baeldung.com", 1);
+        User usr01 = new User("usr01", LocalDate.of(2018, 1, 1), "usr01@slabstechs.com", 1);
         usr01.setLastLoginDate(LocalDate.now());
-        User usr02 = new User("usr02", LocalDate.of(2018, 6, 1), "usr02@baeldung.com", 0);
+        User usr02 = new User("usr02", LocalDate.of(2018, 6, 1), "usr02@slabstechs.com", 0);
         usr02.setLastLoginDate(LocalDate.of(2018, 7, 20));
         usr02.setActive(false);
 
@@ -541,9 +541,9 @@ public class UserRepositoryCommon {
     @Test
     @Transactional
     public void givenTwoUsers_whenAddDeletedColumn_ThenUsersHaveDeletedColumn() {
-        User usr01 = new User("usr01", LocalDate.of(2018, 1, 1), "usr01@baeldung.com", 1);
+        User usr01 = new User("usr01", LocalDate.of(2018, 1, 1), "usr01@slabstechs.com", 1);
         usr01.setLastLoginDate(LocalDate.now());
-        User usr02 = new User("usr02", LocalDate.of(2018, 6, 1), "usr02@baeldung.org", 1);
+        User usr02 = new User("usr02", LocalDate.of(2018, 6, 1), "usr02@slabstechs.org", 1);
         usr02.setLastLoginDate(LocalDate.of(2018, 7, 20));
         usr02.setActive(false);
 

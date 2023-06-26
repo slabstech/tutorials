@@ -4,7 +4,6 @@ package com.slabstech.apitestcontainer;
 import java.util.Arrays;
 
 import com.slabstech.apitestcontainer.model.Address;
-import com.slabstech.apitestcontainer.model.DeliveryState;
 import com.slabstech.apitestcontainer.model.User;
 import com.slabstech.apitestcontainer.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -31,9 +30,7 @@ public class AppStartupRunner implements ApplicationRunner {
                                 .number("1")
                                 .zip("10785")
                                 .build())
-                        .deliveryState(DeliveryState.OUT_FOR_DELIVERY)
-                        .userNumber("1000")
-                        .deliveryDate("20200421")
+                        .userName("1000")
                         .build(),
                 User.builder()
                         .address(Address.builder()
@@ -42,9 +39,7 @@ public class AppStartupRunner implements ApplicationRunner {
                                 .number("1")
                                 .zip("10785")
                                 .build())
-                        .deliveryState(DeliveryState.OUT_FOR_DELIVERY)
-                        .userNumber("1001")
-                        .deliveryDate("20200421")
+                        .userName("1001")
                         .build(),
                 User.builder()
                         .address(Address.builder()
@@ -53,9 +48,8 @@ public class AppStartupRunner implements ApplicationRunner {
                                 .number("2")
                                 .zip("10119")
                                 .build())
-                        .deliveryState(DeliveryState.OUT_FOR_DELIVERY)
-                        .userNumber("1002")
-                        .deliveryDate("20200421")
+                        .userName("1002")
+
                         .build(),
                 User.builder()
                         .address(Address.builder()
@@ -64,9 +58,7 @@ public class AppStartupRunner implements ApplicationRunner {
                                 .number("3")
                                 .zip("10119")
                                 .build())
-                        .deliveryState(DeliveryState.DELIVERED)
-                        .userNumber("1003")
-                        .deliveryDate("20200421")
+                        .userName("1003")
                         .build(),
                 User.builder()
                         .address(Address.builder()
@@ -75,9 +67,7 @@ public class AppStartupRunner implements ApplicationRunner {
                                 .number("1")
                                 .zip("10785")
                                 .build())
-                        .deliveryState(DeliveryState.READY_FOR_DELIVERY)
-                        .userNumber("1000")
-                        .deliveryDate("20200420")
+                        .userName("1000")
                         .build()));
     }
 }

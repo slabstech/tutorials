@@ -1,9 +1,13 @@
 create table users (
                         id INT AUTO_INCREMENT PRIMARY KEY,
-                        user_number VARCHAR(50) NOT NULL,
-                        delivery_date VARCHAR(8) NOT NULL,
-                        delivery_state VARCHAR(20) NOT NULL,
-                        address_id INT
+                        user_name VARCHAR(50) NOT NULL,
+                        email VARCHAR(20) NOT NULL,
+                        active BOOLEAN,
+                        status int,
+                        address_id INT,
+                        creation_date date,
+                        last_login_date date,
+                        name VARCHAR(50)
 );
 
 create table address (
