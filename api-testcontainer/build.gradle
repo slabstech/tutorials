@@ -38,6 +38,7 @@ dependencies {
 
 	implementation 'org.flywaydb:flyway-core:9.19.1'
 	runtimeOnly 'com.h2database:h2'
+	implementation 'org.postgresql:postgresql:42.6.0'
 
 	implementation('org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0')
 	testImplementation "org.testcontainers:postgresql:1.18.1"

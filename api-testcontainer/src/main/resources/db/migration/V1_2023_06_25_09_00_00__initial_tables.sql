@@ -1,5 +1,5 @@
 create table users (
-                        id INT AUTO_INCREMENT PRIMARY KEY,
+                        id SERIAL PRIMARY KEY,
                         email VARCHAR(20) NOT NULL,
                         active BOOLEAN,
                         status int,
@@ -10,7 +10,7 @@ create table users (
 );
 
 create table address (
-                         id INT AUTO_INCREMENT PRIMARY KEY,
+                         id SERIAL PRIMARY KEY,
                          users INT REFERENCES users(id),
                          street VARCHAR(250),
                          zip VARCHAR(250),

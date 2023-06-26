@@ -35,9 +35,7 @@ public class UserController {
     private NotificationService notificationService;
 
     @GetMapping
-    public List<User> getAllUsers( @RequestParam(required = false) String deliveryDate) {
-        if(deliveryDate == null )
-            return userRepository.findAll();
+    public List<User> getAllUsers( ) {
 
         return userRepository.findAll();
     }

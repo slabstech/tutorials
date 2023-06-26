@@ -5,7 +5,7 @@ import com.slabstech.apitestcontainer.ApiTestcontainerApplication;
 import com.slabstech.apitestcontainer.model.User;
 import com.slabstech.apitestcontainer.util.SLabsPostgresqlContainer;
 import org.junit.ClassRule;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
@@ -17,9 +17,6 @@ import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/**
- * Created by adam.
- */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ApiTestcontainerApplication.class)
 @ActiveProfiles({"tc", "tc-auto"})

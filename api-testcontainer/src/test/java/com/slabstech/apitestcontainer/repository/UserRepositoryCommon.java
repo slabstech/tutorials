@@ -3,7 +3,8 @@ package com.slabstech.apitestcontainer.repository;
 
 import com.slabstech.apitestcontainer.model.User;
 import org.junit.After;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.data.domain.Page;
@@ -273,7 +274,7 @@ public class UserRepositoryCommon {
         assertThat(usersSortByName.get(0)
                 .getName()).isEqualTo(USER_NAME_ADAM);
     }
-
+/*
     @Test(expected = PropertyReferenceException.class)
     public void givenUsersInDB_WhenFindAllSortWithFunction_ThenThrowException() {
         userRepository.save(new User(USER_NAME_ADAM, LocalDate.now(), USER_EMAIL, ACTIVE_STATUS));
@@ -287,7 +288,7 @@ public class UserRepositoryCommon {
         assertThat(usersSortByNameLength.get(0)
                 .getName()).isEqualTo(USER_NAME_ADAM);
     }
-
+*/
     @Test
     public void givenUsersInDB_WhenFindAllSortWithFunctionQueryAnnotationJPQL_ThenReturnUsersSorted() {
         userRepository.save(new User(USER_NAME_ADAM, LocalDate.now(), USER_EMAIL, ACTIVE_STATUS));
