@@ -50,3 +50,9 @@
   * https://github.com/provectus/kafka-ui
   * https://www.baeldung.com/spring-boot-testcontainers-integration-test
   
+
+* Rate Limiting
+  * https://reflectoring.io/rate-limiting-with-springboot-resilience4j/
+  * https://resilience4j.readme.io/docs/ratelimiter
+  * https://www.baeldung.com/spring-bucket4j
+  * https://spring.io/blog/2021/04/05/api-rate-limiting-with-spring-cloud-gateway
