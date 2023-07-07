@@ -1,7 +1,9 @@
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+import tensorflow as tf
+import numpy as np
+import random
+
 
 
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    print('Tic Tac Toe')
+

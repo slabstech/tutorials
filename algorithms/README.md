@@ -9,6 +9,11 @@
   * Python / Numpy / Tensorflow
 
 
+* Steps
+  * Docker
+    * docker build -t slabstech/tic-tac-toe .
+    * docker run slabstech/tic-tac-toe 
+
 
 * Reference
   * JupyterNotebook + Docker + Tensorflow - https://dev.to/docker/machine-learning-with-tensorflow-object-detection-running-on-docker-5ek0
